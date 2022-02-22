@@ -4,6 +4,7 @@ import com.example.Api_JPA_Hibernate.Model.EmployeeModel;
 import com.example.Api_JPA_Hibernate.Repositories.IntEmployeeRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
@@ -12,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest //solo para la capa Jpa
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
+
 public class EmployeeJpaRepositoryTest {
 
     @Autowired
